@@ -58,7 +58,7 @@ a {
     position: absolute;
     right: 35px;
     bottom: 50px;
-    background: url(https://images-ext-2.discordapp.net/external/Av8R_G99vcV7LTo66HN3oDi737zAjpGGHrXaFAf8c18/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/851062442330816522/a_492b3c7e87d2b6f95b4c23c0c71d0eff.gif?width=600&height=600);
+    background: url(./avatar.gif);
     border-radius: 8px;
     background-size: cover;
     z-index: 88;

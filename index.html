@@ -11,15 +11,15 @@
   <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DR4VR4K20V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DR4VR4K20V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-DR4VR4K20V');
-</script>
-<!--下雪
+    gtag('config', 'G-DR4VR4K20V');
+  </script>
+  <!--下雪
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript">
 (function($){
@@ -65,7 +65,13 @@ $(function(){
 });
   </script>
 	-->
-	
+  <script>
+    function info_me() {
+      var message="我的小小資訊:\n🚹/🇹🇼/15y\n\n我擅長的:\n網頁後端/各大平台機器人開發\n\n我參與過的社群:\n> COSCUP 2023 會眾\n> SITCON 2024 場務組";
+      alert(message)
+    }
+  </script>
+
 </head>
 
 <body>
@@ -73,7 +79,9 @@ $(function(){
     <h2>Hans (亨)</h2>
     <h3>學生&開發者</h3>
     <div class="mail"><a style="color:#606060" href="mailto:hi@hans0805.me">hi@hans0805.me</a></div>
-    <div class="igid">08.hans_</div>
+    <div class="igid"><a style="color:#606060" href="https://www.instagram.com/08.hans_" target="_blank">08.hans_</a></div>
+    <div class="github"><a style="color:#606060" href="https://github.com/HansHans135" target="_blank">HansHans135</a></div>
+    <div class="info" onclick="info_me()"><a href="#" style="color:#606060">不怎麼正經的簡介</a></div>
     <a href="https://linktr.ee/08.hans_" target="_blank">
       <div class="qr"></div>
     </a>
@@ -81,7 +89,7 @@ $(function(){
     <div class="circle circle2"></div>
     <div class="circle circle3"></div>
     <div class="circle circle4"></div>
-    <div class="circle circle5"></div>
+    <!--<div class="circle circle5"></div>-->
     <div class="circle circle6"></div>
 
   </div>

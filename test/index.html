@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>亨 - 關於我  </title>
+    <title>亨 - 關於我 </title>
     <style>
         body,
         html {
@@ -38,7 +38,6 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-            background-image: url("https://cdn.discordapp.com/banners/851062442330816522/606dcc084252e7cfb7fef6ddad359d9d.png?size=1024");
             position: relative;
         }
 
@@ -201,12 +200,14 @@
 
             .profile-actions {
                 text-align: center;
+                transform: translateY(70px);
                 padding: 10px;
+                width: calc(100%-30px);
             }
 
             .profile-actions button {
                 margin: 5px;
-                width: calc(50% - 10px);
+                width: 30%;
             }
         }
 
@@ -250,12 +251,24 @@
         <div class="cover-photo">
             <div class="profile-photo"></div>
         </div>
+        <div class="profile-actions">
+            <nobr>
+
+                <button id="btn-page-home" onclick="go_page('home')">首頁</button>
+                <button id="btn-page-info" onclick="go_page('info')">經歷</button>
+                <button id="btn-page-project" onclick="go_page('project')">專案</button>
+            </nobr>
+        </div>
         <div class="profile-info">
+
             <div class="profile-name">洪碩亨</div>
             <div class="profile-username">08.hans_</div>
-            <div class="about-me">
-                <h3>關於我</h3>
-                <!--
+
+            <!--首頁-->
+            <div id="page-home" style="display: block;">
+                <div class="about-me">
+                    <h3>關於我</h3>
+                    <!--
                 <p>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -287,11 +300,31 @@
                     hi@hans0805.me
                 </p>
                 -->
-                <p>something here</p>
+                    <p>something here</p>
+                </div>
+                <div class="join-date">
+                    成為地球人時間: 2008年8月5日
+                </div>
             </div>
-            <div class="join-date">
-                成為地球人時間: 2008年8月5日
+
+            <!--經歷-->
+            <div id="page-info" style="display: none;">
+                <div class="about-me">
+                    <h3>經歷</h3>
+                    <p>something here</p>
+                </div>
+
             </div>
+
+            <!--專案-->
+            <div id="project-info" style="display: none;">
+                <div class="about-me">
+                    <h3>專案</h3>
+                    <p>something here</p>
+                </div>
+
+            </div>
+
             <hr>
             <div class="links">
                 <a href="https://maybeisfree.host" target="_blank">
@@ -348,6 +381,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let home_page = document.querySelector("#page-home")
+        let info_page = document.querySelector("#page-info")
+        let project_page = document.querySelector("#project-info")
+        function go_page(page_name) {
+            home_page.style.display = "none"
+            info_page.style.display = "none"
+            project_page.style.display = "none"
+            if (page_name == "home") {
+                home_page.style.display = "block"
+            } else if (page_name == "info") {
+                info_page.style.display = "block"
+            } else {
+                project_page.style.display = "block"
+            }
+        }
+    </script>
 </body>
 
 </html>

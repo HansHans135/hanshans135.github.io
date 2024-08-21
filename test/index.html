@@ -247,14 +247,14 @@
         .carousel {
             position: relative;
             overflow: hidden;
-            margin-top: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
         .carousel-inner {
             display: flex;
             transition: transform 0.5s ease;
+            width: 95%;
         }
 
         .carousel-item {
@@ -381,17 +381,33 @@
                         <div class="carousel-inner">
                             <div class="carousel-item">
                                 <div class="experience-block">
-                                    <img src="https://yt3.googleusercontent.com/ytc/AIdro_l-4eHLOxc9YmVaAxYHBSkE6IatT5w8GYWd6YPL2Nl4oTQ=s900-c-k-c0x00ffffff-no-rj" alt="2018年 - 國中學習歷程">
+                                    <img src="sitcon-2024.png" alt="2024-SITCON">
                                     <div class="experience-text">
                                         <h2>2024 - SITCON</h2>
                                         <p>場務</p>
                                     </div>
                                 </div>
                                 <div class="experience-block">
-                                    <img src="https://www.claudeusercontent.com/api/placeholder/400/400" alt="2021年 - 高中資訊科學習">
+                                    <img src="coscup-2024.jpg" alt="2024-COSCUP">
                                     <div class="experience-text">
                                         <h2>2024 - COSCUP</h2>
                                         <p>會眾</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="experience-block">
+                                    <img src="https://www.claudeusercontent.com/api/placeholder/400/400" alt="2023年 - 個人項目開發">
+                                    <div class="experience-text">
+                                        <h2>2023 - COSCUP</h2>
+                                        <p>會眾</p>
+                                    </div>
+                                </div>
+                                <div class="experience-block">
+                                    <img src="https://www.claudeusercontent.com/api/placeholder/400/400" alt="未來展望">
+                                    <div class="experience-text">
+                                        <h2>awa</h2>
+                                        <p>test</p>
                                     </div>
                                 </div>
                             </div>
@@ -430,19 +446,6 @@
 
             <hr>
             <div class="links">
-                <a href="https://maybeisfree.host" target="_blank">
-                    <div class="link-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                            </path>
-                        </svg>
-                        Hosting
-                    </div>
-                </a>
                 <a href="mailto:hi@hans0805.me" target="_blank">
                     <div class="link-item">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
@@ -523,7 +526,7 @@
             const indicators = document.querySelectorAll('.indicator');
 
             function showItem(index) {
-                carousel.style.transform = `translateX(-${index * 100}%)`;
+                carousel.style.transform = `translateX(-${index * 104}%)`;
                 indicators[currentIndex].classList.remove('active');
                 indicators[index].classList.add('active');
                 currentIndex = index;

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>還錢進度</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: slideIn 1s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #333;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 20px;
+            height: 25px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 25px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .percentage {
+            font-size: 48px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .amount {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .remaining {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #ff9800;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>還錢進度</h2>
+        <div class="percentage" id="percentage">0%</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress" style="width: 0%;"></div>
+        </div>
+        <div class="amount" id="amount">金額：$0 / $0</div>
+        <div class="remaining" id="remaining">還差：$0</div>
+    </div>
+
+    <script>
+        // 定義現在和目標金額
+        const currentAmount = 15450; // 現在金額
+        const targetAmount = 50000; // 目標金額
+
+        // 計算進度百分比並四捨五入至整數
+        const progressPercentage = Math.min(Math.round((currentAmount / targetAmount) * 100), 100);
+
+        // 計算還差多少金額
+        const remainingAmount = Math.max(targetAmount - currentAmount, 0);
+
+        // 更新頁面內容的函數，帶有百分比動畫效果
+        function updateProgress() {
+            let currentPercent = 0;
+            const percentageElement = document.getElementById('percentage');
+            const progressElement = document.getElementById('progress');
+
+            const interval = setInterval(() => {
+                if (currentPercent >= progressPercentage) {
+                    clearInterval(interval);
+                } else {
+                    currentPercent++;
+                    percentageElement.innerText = `${currentPercent}%`;
+                    progressElement.style.width = `${currentPercent}%`;
+                }
+            }, 50); // 每 20 毫秒增加 1%
+
+            document.getElementById('amount').innerText = `金額：$${currentAmount.toLocaleString()} / $${targetAmount.toLocaleString()}`;
+            document.getElementById('remaining').innerText = `還差：$${remainingAmount.toLocaleString()}`;
+        }
+
+        // 呼叫函數以初始化和更新動畫
+        setTimeout(updateProgress(),3000)
+    </script>
+</body>
+
+</html>

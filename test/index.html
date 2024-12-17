@@ -9,403 +9,422 @@
     <meta property="og:title" content="Hans - 亨" />
     <meta property="og:image" content="./avatar.gif" />
     <meta property="og:description" content="來自台灣的高中生，擅長與後端打交道" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+(function($){
+	$.fn.snow = function(options){
+	var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('&#10052;'),
+	documentHeight 	= $(document).height(),
+	documentWidth	= $(document).width(),
+	defaults = {
+		minSize		: 10,
+		maxSize		: 20,
+		newOn		: 1000,
+		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+	},
+	options	= $.extend({}, defaults, options);
+	var interval= setInterval( function(){
+	var startPositionLeft = Math.random() * documentWidth - 100,
+	startOpacity = 0.5 + Math.random(),
+	sizeFlake = options.minSize + Math.random() * options.maxSize,
+	endPositionTop = documentHeight - 200,
+	endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+	durationFall = documentHeight * 10 + Math.random() * 5000;
+	$flake.clone().appendTo('body').css({
+		left: startPositionLeft,
+		opacity: startOpacity,
+		'font-size': sizeFlake,
+		color: options.flakeColor
+	}).animate({
+		top: endPositionTop,
+		left: endPositionLeft,
+		opacity: 0.2
+	},durationFall,'linear',function(){
+		$(this).remove()
+	});
+	}, options.newOn);
+    };
+})(jQuery);
+$(function(){
+    $.fn.snow({ 
+	    minSize: 5, /* 定义雪花最小尺寸 */
+	    maxSize: 50,/* 定义雪花最大尺寸 */
+	    newOn: 300  /* 定义密集程度，数字越小越密集 */
+    });
+});
+</script>
     <style>
         body,
-        html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background-color: #424549;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #424549;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        a {
-            color: #676767;
-        }
+a {
+    color: #676767;
+}
 
-        .profile-container {
-            width: 100%;
-            max-width: 600px;
-            /*max-height: 95%;*/
-            margin: 20px;
-            background-color: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.profile-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-        }
+.cover-photo {
+    height: 180px;
+    background-image: url("cover.jpg");
+    background-color: #e0e0e0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
 
-        .cover-photo {
-            height: 180px;
-            background-image: url("cover.jpg");
-            background-color: #e0e0e0;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            position: relative;
-        }
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    background-image: url("https://hans0805.me/img/avatar.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: -70px;
+    left: 30px;
+    border: 5px solid white;
+    transition: all 0.3s ease;
+}
 
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 100px;
-            background-image: url("https://hans0805.me/img/avatar.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            position: absolute;
-            bottom: -70px;
-            left: 30px;
-            border: 5px solid white;
-            transition: all 0.3s ease;
-        }
+.profile-actions {
+    padding: 10px 20px;
+    text-align: right;
+}
 
-        .profile-actions {
-            padding: 10px 20px;
-            text-align: right;
-        }
+.profile-actions button {
+    padding: 8px 16px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-        .profile-actions button {
-            padding: 8px 16px;
-            margin-left: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.profile-actions button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
 
-        .profile-actions button:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
+.profile-info {
+    padding: 10px 50px 20px;
+}
 
-        .profile-info {
-            padding: 10px 50px 20px
-                /*background: linear-gradient(rgb(196, 100, 3), rgb(0, 0, 0));*/
-        }
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 
-        .profile-name {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+.profile-username {
+    color: #666;
+    margin-bottom: 20px;
+}
 
-        .profile-username {
-            color: #666;
-            margin-bottom: 20px;
-        }
+.about-me {
+    margin-bottom: 20px;
+}
 
-        .about-me {
-            margin-bottom: 20px;
-        }
+.about-me h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
 
-        .about-me h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
+.about-me p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+}
 
-        .about-me p {
-            margin: 5px 0;
-            display: flex;
-            align-items: center;
-            word-break: break-word;
-        }
+.about-me svg {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
 
-        .about-me svg {
-            min-width: 20px;
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
+.join-date,
+.links {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
 
-        .join-date,
-        .links {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
+.links {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-        }
+.link-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
-        .link-item {
-            display: inline-flex;
-            align-items: center;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            padding: 5px 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+.link-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #e0e0e0;
+}
 
-        .link-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            background-color: #e0e0e0;
-        }
+.link-item svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
 
-        .link-item svg {
-            width: 16px;
-            height: 16px;
-            margin-right: 5px;
-            transition: all 0.3s ease;
-        }
+.link-item:hover svg {
+    transform: scale(1.1);
+}
 
-        .link-item:hover svg {
-            transform: scale(1.1);
-        }
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    margin: 0 auto;
+}
 
-            body,
-            html {
-                align-items: flex-start;
-            }
+.carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
 
-            .profile-container {
-                margin: 0;
-                border-radius: 0;
-                height: 100%;
-                max-height: 100vh;
-                overflow-y: auto;
-            }
+.experience-block {
+    width: calc(50% - 10px);
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
 
-            .cover-photo {
-                height: 180px;
-            }
+.experience-block img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
 
-            .profile-photo {
-                width: 120px;
-                height: 120px;
-                bottom: -60px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+.experience-text {
+    padding: 15px;
+}
 
-            .profile-info {
-                padding: 80px 40px 20px
-            }
+.experience-text h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
 
-            .profile-name {
-                font-size: 22px;
-                text-align: center;
-            }
+.experience-text p {
+    font-size: 14px;
+    margin: 0;
+}
 
-            .profile-username {
-                text-align: center;
-            }
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
-            .profile-actions {
-                text-align: center;
-                transform: translateY(70px);
-                padding: 10px;
-                width: calc(100%-30px);
-            }
+.carousel-control.prev {
+    left: 10px;
+}
 
-            .profile-actions button {
-                margin: 5px;
-                width: 30%;
-            }
-        }
+.carousel-control.next {
+    right: 10px;
+}
 
-        @media (max-width: 480px) {
-            .profile-container {
-                margin: 0;
-            }
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
 
-            .cover-photo {
-                height: 180px;
-            }
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
 
-            .profile-photo {
-                width: 120px;
-                height: 120px;
-                bottom: -70px;
-            }
+.indicator.active {
+    background-color: #000;
+}
 
-            .profile-info {
-                padding: 80px 15px 15px;
-            }
+/* Responsive Design */
+@media (max-width: 768px) {
+    body,
+    html {
+        align-items: flex-start;
+    }
 
-            .profile-name {
-                font-size: 20px;
-            }
+    .profile-container {
+        margin: 0;
+        border-radius: 0;
+        height: 100%;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
 
-            .about-me p {
-                font-size: 14px;
-            }
+    .cover-photo {
+        height: 180px;
+    }
 
-            .link-item {
-                font-size: 12px;
-            }
-        }
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
+    .profile-info {
+        padding: 80px 40px 20px;
+    }
 
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            width: 100%;
-            margin-bottom: 20px;
-        }
+    .profile-name {
+        font-size: 22px;
+        text-align: center;
+    }
 
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease;
-            width: 95%;
-        }
+    .profile-username {
+        text-align: center;
+    }
 
-        .carousel-item {
-            flex: 0 0 100%;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 10px;
-        }
+    .profile-actions {
+        text-align: center;
+        transform: translateY(70px);
+        padding: 10px;
+        width: calc(100% - 30px);
+    }
 
-        .experience-block {
-            width: calc(50% - 10px);
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
+    .profile-actions button {
+        margin: 5px;
+        width: 30%;
+    }
 
-        .experience-block img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            display: block;
-        }
+    .experience-block {
+        width: calc(50% - 5px);
+    }
+    
+    .carousel-inner {
+        width: 100%;
+    }
+    
+    .carousel-item {
+        padding: 5px;
+    }
 
-        .experience-text {
-            padding: 15px;
-        }
+    .carousel-control {
+        width: 15px;
+        height: 15px;
+        padding: 8px;
+    }
 
-        .experience-text h2 {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
+    .experience-text h2 {
+        font-size: 14px;
+    }
 
-        .experience-text p {
-            font-size: 14px;
-            margin: 0;
-        }
+    .experience-text p {
+        font-size: 12px;
+    }
+}
 
-        .carousel-control {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 50%;
-            font-size: 18px;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 10px;
-            height: 20px;
-        }
+@media (max-width: 480px) {
+    .profile-container {
+        margin: 0;
+    }
 
-        .carousel-control.prev {
-            left: 10px;
-        }
+    .profile-info {
+        padding: 80px 15px 15px;
+    }
 
-        .carousel-control.next {
-            right: 10px;
-        }
+    .profile-name {
+        font-size: 20px;
+    }
 
-        .carousel-indicators {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
+    .about-me p {
+        font-size: 14px;
+    }
 
-        .indicator {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-        }
+    .link-item {
+        font-size: 12px;
+    }
 
-        .indicator.active {
-            background-color: #000;
-        }
+    .experience-block {
+        width: calc(50% - 5px);
+        margin-bottom: 10px;
+    }
+    
+    .carousel-inner {
+        width: 100%;
+    }
 
-        /* 響應式設計 */
-        @media (max-width: 768px) {
-            .experience-block {
-                width: calc(50% - 5px);
-                /* 調整寬度以適應較小的間距 */
-            }
-
-            .carousel-item {
-                padding: 5px;
-                /* 減小內邊距以適應較小的屏幕 */
-            }
-
-            .experience-text {
-                padding: 10px;
-                /* 減小文字區域的內邊距 */
-            }
-
-            .experience-text h2 {
-                font-size: 14px;
-                /* 減小標題字體大小 */
-            }
-
-            .experience-text p {
-                font-size: 12px;
-                /* 減小段落字體大小 */
-            }
-
-            .carousel-control {
-                width: 30px;
-                /* 減小按鈕尺寸 */
-                height: 30px;
-                font-size: 14px;
-                /* 減小箭頭大小 */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .experience-block {
-                margin-bottom: 10px;
-                /* 進一步減小底部間距 */
-            }
-
-            .carousel-inner {
-                width: 97%;
-            }
-
-            .carousel-control {
-                width: 5px;
-                /* 進一步減小按鈕尺寸 */
-                height: 15px;
-                font-size: 12px;
-                /* 進一步減小箭頭大小 */
-            }
-        }
+    .carousel-control {
+        width: 12px;
+        height: 12px;
+        padding: 6px;
+    }
+}
     </style>
 
 </head>
@@ -680,49 +699,68 @@
             }
 
         }
-
-        // 更新后的轮播功能
         document.addEventListener('DOMContentLoaded', function () {
-            const carousel = document.querySelector('.carousel-inner');
-            const items = document.querySelectorAll('.carousel-item');
-            const prevButton = document.querySelector('.carousel-control.prev');
-            const nextButton = document.querySelector('.carousel-control.next');
-            const indicatorsContainer = document.querySelector('.carousel-indicators');
-            let currentIndex = 0;
+    const carousel = document.querySelector('.carousel-inner');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    let currentIndex = 0;
 
-            // 创建指示器
-            items.forEach((_, index) => {
-                const indicator = document.createElement('div');
-                indicator.classList.add('indicator');
-                if (index === 0) indicator.classList.add('active');
-                indicator.addEventListener('click', () => showItem(index));
-                indicatorsContainer.appendChild(indicator);
-            });
+    // 創建指示器
+    items.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => showItem(index));
+        indicatorsContainer.appendChild(indicator);
+    });
 
-            const indicators = document.querySelectorAll('.indicator');
+    const indicators = document.querySelectorAll('.indicator');
 
-            function showItem(index) {
-                carousel.style.transform = `translateX(-${index * 104}%)`;
-                indicators[currentIndex].classList.remove('active');
-                indicators[index].classList.add('active');
-                currentIndex = index;
-            }
+    function showItem(index) {
+        // 使用百分比而不是固定值
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+        indicators[currentIndex].classList.remove('active');
+        indicators[index].classList.add('active');
+        currentIndex = index;
+    }
 
-            prevButton.addEventListener('click', function (e) {
-                e.preventDefault();
-                let index = currentIndex - 1;
-                if (index < 0) index = items.length - 1;
-                showItem(index);
-            });
+    function goToPrev(e) {
+        e.preventDefault();
+        let index = currentIndex - 1;
+        if (index < 0) index = items.length - 1;
+        showItem(index);
+    }
 
-            nextButton.addEventListener('click', function (e) {
-                e.preventDefault();
-                let index = currentIndex + 1;
-                if (index >= items.length) index = 0;
-                showItem(index);
-            });
+    function goToNext(e) {
+        e.preventDefault();
+        let index = currentIndex + 1;
+        if (index >= items.length) index = 0;
+        showItem(index);
+    }
 
-        });
+    // 事件監聽器
+    prevButton.addEventListener('click', goToPrev);
+    nextButton.addEventListener('click', goToNext);
+
+    // 觸控支持
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+            goToNext(e);
+        } else if (touchEndX - touchStartX > 50) {
+            goToPrev(e);
+        }
+    });
+});
     </script>
 
 </body>

@@ -1,780 +1,975 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" class="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hans - 亨</title>
-    <meta name="description" content="來自台灣的高中生，擅長與後端打交道">
-    <meta property="og:title" content="Hans - 亨" />
-    <meta property="og:image" content="/img/avatar.jpg" />
-    <meta property="og:description" content="來自台灣的高中生，擅長與後端打交道" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!--
-    <script type="text/javascript">
-        (function ($) {
-            $.fn.snow = function (options) {
-                var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#10052;'),
-                    documentHeight = $(document).height(),
-                    documentWidth = $(document).width(),
-                    defaults = {
-                        minSize: 10,
-                        maxSize: 20,
-                        newOn: 1000,
-                        flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+    <title>Hans | Backend Developer</title>
+    <!-- icon -->
+    <link rel="icon" type="image/png" href="https://hans0805.me/img/avatar.jpg">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Hans - Backend Developer & Digital Architect. 專注於打造高效能、高可用的後端系統架構與 Web 開發。">
+    <meta name="keywords" content="Hans, Backend Developer, Python, C#, Web Development, Discord Bot, System Architecture, Portfolio, 軟體工程師, 後端開發">
+    <meta name="author" content="Hans">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hans0805.me/">
+    <meta property="og:title" content="Hans | Backend Developer">
+    <meta property="og:description" content="Hans - Backend Developer & Digital Architect. 專注於打造高效能、高可用的後端系統架構與 Web 開發。">
+    <meta property="og:image" content="https://github.com/HansHans135.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hans0805.me/">
+    <meta property="twitter:title" content="Hans | Backend Developer">
+    <meta property="twitter:description" content="Hans - Backend Developer & Digital Architect. 專注於打造高效能、高可用的後端系統架構與 Web 開發。">
+    <meta property="twitter:image" content="https://github.com/HansHans135.png">
+
+    <link rel="canonical" href="https://hans0805.me/">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
                     },
-                    options = $.extend({}, defaults, options);
-                var interval = setInterval(function () {
-                    var startPositionLeft = Math.random() * documentWidth - 100,
-                        startOpacity = 0.5 + Math.random(),
-                        sizeFlake = options.minSize + Math.random() * options.maxSize,
-                        endPositionTop = documentHeight - 200,
-                        endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
-                        durationFall = documentHeight * 10 + Math.random() * 5000;
-                    $flake.clone().appendTo('body').css({
-                        left: startPositionLeft,
-                        opacity: startOpacity,
-                        'font-size': sizeFlake,
-                        color: options.flakeColor
-                    }).animate({
-                        top: endPositionTop,
-                        left: endPositionLeft,
-                        opacity: 0.2
-                    }, durationFall, 'linear', function () {
-                        $(this).remove()
-                    });
-                }, options.newOn);
-            };
-        })(jQuery);
-        $(function () {
-            $.fn.snow({
-                minSize: 5, /* 定義雪花最小尺寸 */
-                maxSize: 50,/* 定義雪花最大尺寸 */
-                newOn: 200  /* 定義密集程度，數字越小越密集 */
-            });
-        });
+                    colors: {
+                        'apple-gray': '#1d1d1f',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    },
+                    animation: {
+                        marquee: 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
     </script>
-    -->
+
+
+    <!-- Styles -->
     <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background-color: #424549;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
 
-        a {
-            color: #676767;
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
         }
 
-        .profile-container {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 25px;
+        body {
+            background-color: #000000;
+            color: #f5f5f7;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Smooth Scroll Setup */
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
             overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .cover-photo {
-            height: 180px;
-            background-image: url("/img/cover.jpg");
-            background-color: #e0e0e0;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            position: relative;
-        }
-
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 100px;
-            background-image: url("/img/avatar.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            position: absolute;
-            bottom: -70px;
-            left: 30px;
-            border: 5px solid white;
-            transition: all 0.3s ease;
-        }
-
-        .profile-actions {
-            padding: 10px 20px;
-            text-align: right;
-        }
-
-        .profile-actions button {
-            padding: 8px 16px;
-            margin-left: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .profile-actions button:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
-
-        .profile-info {
-            padding: 10px 50px 20px;
-        }
-
-        .profile-name {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .profile-username {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .about-me {
-            margin-bottom: 20px;
-        }
-
-        .about-me h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .about-me p {
-            margin: 5px 0;
-            display: flex;
-            align-items: center;
-            word-break: break-word;
-        }
-
-        .about-me svg {
-            min-width: 20px;
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-
-        .join-date,
-        .links {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .link-item {
-            display: inline-flex;
-            align-items: center;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            padding: 5px 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .link-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            background-color: #e0e0e0;
-        }
-
-        .link-item svg {
-            width: 16px;
-            height: 16px;
-            margin-right: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .link-item:hover svg {
-            transform: scale(1.1);
-        }
-
-        /* Carousel Styles */
-        .carousel {
+        /* Custom Utilities */
+        .glass-panel {
+            background: rgba(29, 29, 31, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
-            width: 100%;
-            margin-bottom: 20px;
         }
 
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .carousel-item {
-            flex: 0 0 100%;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        .experience-block {
-            width: calc(50% - 10px);
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            flex-shrink: 0;
-        }
-
-        .experience-block img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            display: block;
-        }
-
-        .experience-text {
-            padding: 15px;
-        }
-
-        .experience-text h2 {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .experience-text p {
-            font-size: 14px;
-            margin: 0;
-        }
-
-        .carousel-control {
+        /* Spotlight Effect */
+        .glass-panel::before {
+            content: '';
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            text-decoration: none;
-            z-index: 10;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+                    rgba(255, 255, 255, 0.06),
+                    transparent 40%);
+            z-index: 3;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
         }
 
-        .carousel-control.prev {
-            left: 10px;
+        .glass-panel:hover::before {
+            opacity: 1;
         }
 
-        .carousel-control.next {
-            right: 10px;
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #86868b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .carousel-indicators {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
+        .mask-linear-gradient {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
 
-        .indicator {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            cursor: pointer;
+        .hero-text-mask {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
 
-        .indicator.active {
-            background-color: #000;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-
-            body,
-            html {
-                align-items: flex-start;
-            }
-
-            .profile-container {
-                margin: 0;
-                border-radius: 0;
-                height: 100%;
-                max-height: 100vh;
-                overflow-y: auto;
-            }
-
-            .cover-photo {
-                height: 180px;
-            }
-
-            .profile-photo {
-                width: 120px;
-                height: 120px;
-                bottom: -60px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .profile-info {
-                padding: 80px 40px 20px;
-            }
-
-            .profile-name {
-                font-size: 22px;
-                text-align: center;
-            }
-
-            .profile-username {
-                text-align: center;
-            }
-
-            .profile-actions {
-                text-align: center;
-                transform: translateY(70px);
-                padding: 10px;
-                width: calc(100% - 30px);
-            }
-
-            .profile-actions button {
-                margin: 5px;
-                width: 30%;
-            }
-
-            .experience-block {
-                width: calc(50% - 5px);
-            }
-
-            .carousel-inner {
-                width: 100%;
-            }
-
-            .carousel-item {
-                padding: 5px;
-            }
-
-            .carousel-control {
-                width: 15px;
-                height: 15px;
-                padding: 8px;
-            }
-
-            .experience-text h2 {
-                font-size: 14px;
-            }
-
-            .experience-text p {
-                font-size: 12px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .profile-container {
-                margin: 0;
-            }
-
-            .profile-info {
-                padding: 80px 15px 15px;
-            }
-
-            .profile-name {
-                font-size: 20px;
-            }
-
-            .about-me p {
-                font-size: 14px;
-            }
-
-            .link-item {
-                font-size: 12px;
-            }
-
-            .experience-block {
-                width: calc(50% - 5px);
-                margin-bottom: 10px;
-            }
-
-            .carousel-inner {
-                width: 100%;
-            }
-
-            .carousel-control {
-                width: 12px;
-                height: 12px;
-                padding: 6px;
-            }
+        .reveal-text {
+            transform: translateY(100%);
+            opacity: 0;
         }
     </style>
-
 </head>
 
-<body>
-    <div class="profile-container">
-        <div class="cover-photo">
-            <div class="profile-photo"></div>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+            <a href="#" class="text-xl font-semibold tracking-tight hover:opacity-70 transition-opacity">Hans.</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-white transition-colors">關於我</a>
+                <a href="#journey" class="hover:text-white transition-colors">歷程</a>
+                <a href="#work" class="hover:text-white transition-colors">作品集</a>
+                <a href="#contact" class="hover:text-white transition-colors">聯絡</a>
+            </div>
+            <a href="#contact"
+                class="magnetic-btn bg-white text-black px-4 py-1.5 rounded-full text-xs font-bold hover:bg-gray-200 transition-transform hover:scale-105 inline-block">
+                Let's Talk
+            </a>
         </div>
-        <div class="profile-actions">
-            <nobr>
+    </nav>
 
-                <button id="btn-page-home" onclick="go_page('home')">首頁</button>
-                <button id="btn-page-info" onclick="go_page('info')">經歷</button>
-                <button id="btn-page-project" onclick="go_page('project')">專案</button>
-            </nobr>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-20">
+        <!-- Background Elements -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse">
         </div>
-        <div class="profile-info">
 
-            <div class="profile-name" onclick="show_name(this)">Hans (亨)</div>
-            <div class="profile-username">08.hans_</div>
-
-            <!--首頁-->
-            <div id="page-home" style="display: block;">
-                <div class="about-me">
-                    <h3>關於我</h3>
-                    <p id="info-text">
-                        我叫亨，是一名資訊科高職生，擅長編寫Python程式，並熱衷於運動，特別是排球。我擁有開發Line機器人和Discord機器人的經驗，並且能夠製作各種網站。在學習和運動中，我不斷挑戰自己，提升技能，希望未來能在資訊科技領域有所突破。我的目標是結合興趣與專業，創造出更多有價值的應用程式和平台，然後賺很多的錢。
-                    </p>
-                </div>
-                <div class="join-date">
-                    成為地球人時間: 2008年8月5日
-                </div>
+        <div class="z-10 text-center px-4">
+            <div class="overflow-hidden mb-2">
+                <h2 class="hero-reveal text-xl md:text-2xl font-medium text-blue-400 tracking-wide">Hello, I'm Hans</h2>
+            </div>
+            <div class="overflow-hidden">
+                <h1 class="hero-reveal text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-6">
+                    Digital <br />
+                    <span class="text-gray-500">Architect.</span>
+                </h1>
+            </div>
+            <div class="overflow-hidden">
+                <p class="hero-reveal text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    打造高效能、高可用的後端系統架構。<br>
+                    專注於細節，追求卓越的程式碼工藝。
+                </p>
             </div>
 
-            <!--經歷-->
-            <div id="page-info" style="display: none;">
-                <div class="about-me">
-                    <h3>經歷</h3>
-                    <div class="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item">
-                                <div class="experience-block">
-                                    <img src="/img/about/sitcon-2024.png" alt="2024-SITCON">
-                                    <div class="experience-text">
-                                        <h2>2024 - SITCON</h2>
-                                        <p>場務</p>
-                                    </div>
-                                </div>
-                                <div class="experience-block">
-                                    <img src="/img/about/sitcon-2025.png" alt="2025-SITCON">
-                                    <div class="experience-text">
-                                        <h2>2025 - SITCON</h2>
-                                        <p>行政</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="experience-block">
-                                    <img src="/img/about/coscup-2024.jpg" alt="2024-COSCUP">
-                                    <div class="experience-text">
-                                        <h2>2024 - COSCUP</h2>
-                                        <p>會眾</p>
-                                    </div>
-                                </div>
-                                <div class="experience-block">
+            <div class="mt-12 hero-reveal opacity-0">
+                <div class="animate-bounce">
+                    <i data-lucide="chevron-down" class="w-8 h-8 text-gray-500"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                    <img src="/img/about/coscup-2023.png" alt="2023 - COSCUP">
-                                    <div class="experience-text">
-                                        <h2>2023 - COSCUP</h2>
-                                        <p>會眾</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="experience-block">
-                                    <img src="/img/about/mif.png" alt="第二屆 - THJCC">
-                                    <div class="experience-text">
-                                        <h2>【MIF】可能是免費託管</h2>
-                                        <p>擁有者</p>
-                                    </div>
-                                </div>
-                                <div class="experience-block">
-                                    <img src="/img/about/hbot.png" alt="2023 - COSCUP">
-                                    <div class="experience-text">
-                                        <h2>Hbot</h2>
-                                        <p>開發者</p>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- About Section (Bento Grid Style) -->
+    <section id="about" class="py-24 px-6 relative z-10 bg-black">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 reveal-header">About Me.</h2>
+                <div class="h-1 w-20 bg-blue-500 rounded-full reveal-line origin-left"></div>
+            </div>
 
-                            <div class="carousel-item">
-                                <div class="experience-block">
-                                    <img src="/img/about/THJCC.png" alt="第二屆 - THJCC">
-                                    <div class="experience-text">
-                                        <h2>第二屆 - THJCC</h2>
-                                        <p>文書長</p>
-                                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 grid-rows-auto">
+                <!-- Profile Card -->
+                <div
+                    class="glass-panel p-8 rounded-3xl md:col-span-2 hover:bg-gray-900/50 transition-colors duration-500 group gs-reveal">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="relative w-32 h-32 md:w-40 md:h-40 shrink-0">
+                            <!-- GitHub Avatar automatically fetched -->
+                            <!-- https://hans0805.me/img/avatar.jpg -->
+                            <img src="https://github.com/HansHans135.png" alt="Hans"
+                                class="rounded-full w-full h-full object-cover border-4 border-gray-800 shadow-2xl group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute bottom-2 right-2 bg-green-500 w-4 h-4 rounded-full border-2 border-black">
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Hans</h3>
+                            <p class="text-gray-400 leading-relaxed mb-4">
+                                Hi there! I'm Hans, a student passionate about technology and software development.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-gray-800 text-xs text-gray-300 border border-gray-700">Web
+                                    Dev</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-gray-800 text-xs text-gray-300 border border-gray-700">Backend
+                                    Architecture</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-gray-800 text-xs text-gray-300 border border-gray-700">Team
+                                    Lead</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats/Tech Stack -->
+                <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between gs-reveal delay-100">
+                    <div>
+                        <i data-lucide="code-2" class="w-10 h-10 text-blue-400 mb-4"></i>
+                        <h4 class="text-xl font-bold">Tech Stack</h4>
+                    </div>
+                    <div class="mt-4 overflow-hidden w-full relative mask-linear-gradient">
+                        <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
+                            <!-- Set 1 -->
+                            <div class="flex gap-2 mx-2">
+                                <!-- Programming Languages -->
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-blue-400"
+                                    title="Python">
+                                    <i data-lucide="file-code" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Python</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-purple-500"
+                                    title="C#">
+                                    <i data-lucide="hash" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">C#</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-blue-600"
+                                    title="C++">
+                                    <i data-lucide="code-2" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">C++</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-yellow-400"
+                                    title="JavaScript">
+                                    <i data-lucide="braces" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">JavaScript</span>
+                                </div>
+                                <!-- Web Technologies -->
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-orange-500"
+                                    title="HTML">
+                                    <i data-lucide="layout" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">HTML</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-white"
+                                    title="Next.js">
+                                    <i data-lucide="triangle" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Next.js</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-gray-400"
+                                    title="Flask">
+                                    <i data-lucide="flask-conical" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Flask</span>
+                                </div>
+                                <!-- Bot & Server -->
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-indigo-400"
+                                    title="Discord Bot">
+                                    <i data-lucide="message-square" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Discord Bot</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-blue-400"
+                                    title="Telegram Bot">
+                                    <i data-lucide="send" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Telegram Bot</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-green-500"
+                                    title="Line Bot">
+                                    <i data-lucide="messages-square" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Line Bot</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-gray-300"
+                                    title="Server">
+                                    <i data-lucide="server" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Server</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-green-400"
+                                    title="Supabase">
+                                    <i data-lucide="database" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Supabase</span>
+                                </div>
+                            </div>
+                            <!-- Set 2 (Duplicate) -->
+                            <div class="flex gap-2 mx-2">
+                                <!-- Programming Languages -->
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-blue-400"
+                                    title="Python">
+                                    <i data-lucide="file-code" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Python</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-purple-500"
+                                    title="C#">
+                                    <i data-lucide="hash" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">C#</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-blue-600"
+                                    title="C++">
+                                    <i data-lucide="code-2" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">C++</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-yellow-400"
+                                    title="JavaScript">
+                                    <i data-lucide="braces" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">JavaScript</span>
+                                </div>
+                                <!-- Web Technologies -->
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-orange-500"
+                                    title="HTML">
+                                    <i data-lucide="layout" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">HTML</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-white"
+                                    title="Next.js">
+                                    <i data-lucide="triangle" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Next.js</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-gray-400"
+                                    title="Flask">
+                                    <i data-lucide="flask-conical" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Flask</span>
+                                </div>
+                                <!-- Bot & Server -->
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-indigo-400"
+                                    title="Discord Bot">
+                                    <i data-lucide="message-square" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Discord Bot</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-blue-400"
+                                    title="Telegram Bot">
+                                    <i data-lucide="send" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Telegram Bot</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-green-500"
+                                    title="Line Bot">
+                                    <i data-lucide="messages-square" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Line Bot</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-gray-300"
+                                    title="Server">
+                                    <i data-lucide="server" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Server</span>
+                                </div>
+                                <div class="px-4 h-10 bg-gray-800 rounded-lg flex items-center justify-center gap-2 text-green-400"
+                                    title="Supabase">
+                                    <i data-lucide="database" class="w-5 h-5"></i>
+                                    <span class="text-sm font-medium text-gray-200">Supabase</span>
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="carousel-control prev">&lt;</a>
-                        <a href="#" class="carousel-control next">&gt;</a>
-                        <div class="carousel-indicators"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!--專案-->
-            <div id="project-info" style="display: none;">
-                <div class="about-me">
-                    <h3>專案</h3>
-                    <div>
-                        <a href="https://th.hans0805.me" target="_blank">
-                            <div class="link-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" aria-label="Threads" viewBox="0 0 192 192">
-                                    <script xmlns="" />
-                                    <path class="x19hqcy"
-                                        d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96L13.0007 96.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z" />
-                                </svg>
-                                Threads AI 貼文分析
-                            </div>
-                        </a>
-                        <br>
-                        <a href="https://no-share.go-to.lol" target="_blank">
-                            <div class="link-item">
-                                <svg fill="#000000" height="200px" width="200px" version="1.1" id="Capa_1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    viewBox="0 0 54.971 54.971" xml:space="preserve">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <g>
-                                            <path
-                                                d="M51.173,3.801c-5.068-5.068-13.315-5.066-18.384,0l-9.192,9.192c-0.781,0.781-0.781,2.047,0,2.828 c0.781,0.781,2.047,0.781,2.828,0l9.192-9.192c1.691-1.69,3.951-2.622,6.363-2.622c2.413,0,4.673,0.932,6.364,2.623 s2.623,3.951,2.623,6.364c0,2.412-0.932,4.672-2.623,6.363L36.325,31.379c-3.51,3.508-9.219,3.508-12.729,0 c-0.781-0.781-2.047-0.781-2.828,0s-0.781,2.048,0,2.828c2.534,2.534,5.863,3.801,9.192,3.801s6.658-1.267,9.192-3.801 l12.021-12.021c2.447-2.446,3.795-5.711,3.795-9.192C54.968,9.512,53.62,6.248,51.173,3.801z">
-                                            </path>
-                                            <path
-                                                d="M27.132,40.57l-7.778,7.778c-1.691,1.691-3.951,2.623-6.364,2.623c-2.412,0-4.673-0.932-6.364-2.623 c-3.509-3.509-3.509-9.219,0-12.728L17.94,24.306c1.691-1.69,3.951-2.622,6.364-2.622c2.412,0,4.672,0.932,6.363,2.622 c0.781,0.781,2.047,0.781,2.828,0s0.781-2.047,0-2.828c-5.067-5.067-13.314-5.068-18.384,0L3.797,32.793 c-2.446,2.446-3.794,5.711-3.794,9.192c0,3.48,1.348,6.745,3.795,9.191c2.446,2.447,5.711,3.795,9.191,3.795 c3.481,0,6.746-1.348,9.192-3.795l7.778-7.778c0.781-0.781,0.781-2.047,0-2.828S27.913,39.789,27.132,40.57z">
-                                            </path>
-                                        </g>
-                                    </g>
-                                </svg>
-                                No Share - 縮短分享連結
-                            </div>
-                        </a>
-                        <br>
-                        <a href="https://maybeisfree.host" target="_blank">
-                            <div class="link-item">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <path
-                                            d="M6 6H6.01M6 18H6.01M5.2 10H18.8C19.9201 10 20.4802 10 20.908 9.78201C21.2843 9.59027 21.5903 9.28431 21.782 8.90798C22 8.48016 22 7.92011 22 6.8V5.2C22 4.0799 22 3.51984 21.782 3.09202C21.5903 2.71569 21.2843 2.40973 20.908 2.21799C20.4802 2 19.9201 2 18.8 2H5.2C4.07989 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V6.8C2 7.92011 2 8.48016 2.21799 8.90798C2.40973 9.28431 2.71569 9.59027 3.09202 9.78201C3.51984 10 4.0799 10 5.2 10ZM5.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V17.2C22 16.0799 22 15.5198 21.782 15.092C21.5903 14.7157 21.2843 14.4097 20.908 14.218C20.4802 14 19.9201 14 18.8 14H5.2C4.07989 14 3.51984 14 3.09202 14.218C2.71569 14.4097 2.40973 14.7157 2.21799 15.092C2 15.5198 2 16.0799 2 17.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.0799 22 5.2 22Z"
-                                            stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                        </path>
-                                    </g>
-                                </svg>
-                                Maybe Is Free - 免費託管
-                            </div>
-                        </a>
-                        <br>
-                        <a href="https://discord.com/application-directory/1126517167966396436" target="_blank">
-                            <div class="link-item">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                    </g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <path
-                                            d="M5 8L10 13M4 14L10 8L12 5M2 5H14M7 2H8M12.913 17H20.087M12.913 17L11 21M12.913 17L15.7783 11.009C16.0092 10.5263 16.1246 10.2849 16.2826 10.2086C16.4199 10.1423 16.5801 10.1423 16.7174 10.2086C16.8754 10.2849 16.9908 10.5263 17.2217 11.009L20.087 17M20.087 17L22 21"
-                                            stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                        </path>
-                                    </g>
-                                </svg>
-                                注音輸入法翻譯
-                            </div>
-                        </a>
                     </div>
                 </div>
 
-            </div>
 
-            <hr>
-            <div class="links">
-                <a href="mailto:hi@hans0805.me" target="_blank">
-                    <div class="link-item">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
-                            stroke-width="2">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="2" stroke-linecap="round">
-                                </rect>
-                            </g>
-                        </svg>
-                        Email
+                <!-- Location / Team -->
+                <div class="glass-panel p-8 rounded-3xl gs-reveal">
+                    <div class="h-full flex flex-col justify-center items-center text-center">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-red-400 mb-2"></i>
+                        <h3 class="text-lg font-bold">New Taipei City, Taiwan</h3>
+                        <p class="text-sm text-gray-500">Available for remote work</p>
                     </div>
-                </a>
-                <a href="https://github.com/hanshans135" target="_blank">
-                    <div class="link-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                            </path>
-                        </svg>
-                        Github
+                </div>
+
+                <!-- GitHub Link Large -->
+                <a href="https://github.com/HansHans135" target="_blank"
+                    class="glass-panel p-8 rounded-3xl md:col-span-2 group relative overflow-hidden gs-reveal delay-100 cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-gray-900 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
-                </a>
-                <a href="https://www.instagram.com/08.hans_" target="_blank">
-                    <div class="link-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                        Instagram
-                    </div>
-                </a>
-                <a href="https://t.me/hans0805" target="_blank">
-                    <div class="link-item">
-                        <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path stroke="currentColor" stroke-width="12"
-                                    d="M23.073 88.132s65.458-26.782 88.16-36.212c8.702-3.772 38.215-15.843 38.215-15.843s13.621-5.28 12.486 7.544c-.379 5.281-3.406 23.764-6.433 43.756-4.54 28.291-9.459 59.221-9.459 59.221s-.756 8.676-7.188 10.185c-6.433 1.509-17.027-5.281-18.919-6.79-1.513-1.132-28.377-18.106-38.214-26.404-2.649-2.263-5.676-6.79.378-12.071 13.621-12.447 29.891-27.913 39.728-37.72 4.54-4.527 9.081-15.089-9.837-2.264-26.864 18.483-53.35 35.835-53.35 35.835s-6.053 3.772-17.404.377c-11.351-3.395-24.594-7.921-24.594-7.921s-9.08-5.659 6.433-11.693Z">
-                                </path>
-                            </g>
-                        </svg>
-                        Telegram
+                    <div class="relative z-10 flex justify-between items-center h-full">
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Check out my code</p>
+                            <h3 class="text-3xl font-bold text-white">GitHub Profile</h3>
+                            <p class="text-gray-500 text-sm mt-2 font-mono">@HansHans135</p>
+                        </div>
+                        <i data-lucide="arrow-up-right"
+                            class="w-12 h-12 text-gray-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"></i>
                     </div>
                 </a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Community Involvement Section -->
+    <section id="journey" class="py-24 px-6 bg-apple-gray relative min-h-screen">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold mb-24 text-center reveal-header">Community Involvement.</h2>
+
+            <div class="relative">
+                <!-- Card 1: SITCON -->
+                <div
+                    class="sticky top-32 mb-12 glass-panel p-8 rounded-3xl border border-gray-700 bg-[#161617] community-card origin-top h-72 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white">SITCON | 學生計算機年會</h3>
+                            <a href="https://sitcon.org/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-colors">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                                <span>2024 / Staff Team</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                                <span>2025 / Administrative Team</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                                <span>2025 Camp / Lecturer</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2: TTHJCC CTF -->
+                <div
+                    class="sticky top-36 mb-12 glass-panel p-8 rounded-3xl border border-gray-700 bg-[#161617] community-card origin-top h-72 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white">TTHJCC CTF</h3>
+                            <a href="https://www.instagram.com/thjcc.tw/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-colors">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                                <span>2 Seasons / Secretary</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: COSCUP -->
+                <div
+                    class="sticky top-40 mb-12 glass-panel p-8 rounded-3xl border border-gray-700 bg-[#161617] community-card origin-top h-72 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white">COSCUP 開源人年會</h3>
+                            <a href="https://coscup.org/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-colors">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                                <span>2024 / Attendee</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                                <span>2023 / Attendee</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4: CYBERSEC -->
+                <div
+                    class="sticky top-44 mb-12 glass-panel p-8 rounded-3xl border border-gray-700 bg-[#161617] community-card origin-top h-72 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white">CYBERSEC 臺灣資安大會</h3>
+                            <a href="https://cybersec.ithome.com.tw/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-colors">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                                <span>2024 / Attendee</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 5: COMPUTEX -->
+                <div
+                    class="sticky top-48 mb-12 glass-panel p-8 rounded-3xl border border-gray-700 bg-[#161617] community-card origin-top h-72 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white">COMPUTEX 台北國際電腦展</h3>
+                            <a href="https://www.computextaipei.com.tw/zh-tw/index.html" target="_blank"
+                                class="text-gray-400 hover:text-white transition-colors">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
+                                <span>2025 / Attendee</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 6: National High School Skills Competition -->
+                <div
+                    class="sticky top-52 mb-12 glass-panel p-8 rounded-3xl border border-gray-700 bg-[#161617] community-card origin-top h-72 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white">SCI 全國高級中等學校技藝競賽</h3>
+                            <a href="https://sci-me.k12ea.gov.tw/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-colors">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                                <span>2025 / Player (Software Development)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section (Showcase) -->
+    <section id="work" class="py-32 px-6 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-2 reveal-header">Selected Works.</h2>
+                    <p class="text-gray-500">Quality over quantity.</p>
+                </div>
+
+                <a href="https://github.com/HansHans135"
+                    class="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors mt-4 md:mt-0">
+                    View all repositories <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Project Card: NyaStack -->
+            <a href="https://nyastack.dev" target="_blank"
+                class="block w-full group cursor-pointer perspective-container">
+                <div
+                    class="relative h-[60vh] rounded-3xl overflow-hidden glass-panel border border-gray-800 transform transition-all duration-700 group-hover:scale-[0.98] project-card">
+                    <!-- Image/Background Placeholder with Gradient -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-indigo-900 to-purple-900 opacity-50 transition-opacity duration-700 group-hover:opacity-70">
+                    </div>
+
+                    <!-- Decorative Elements -->
+                    <div
+                        class="absolute -right-20 -top-20 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] group-hover:bg-blue-500/30 transition-all duration-700">
+                    </div>
+
+                    <!-- Content -->
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-8 md:p-12 bg-gradient-to-t from-black/90 to-transparent">
+                        <div
+                            class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <span
+                                class="px-3 py-1 bg-blue-600/30 border border-blue-500/50 text-blue-300 rounded-full text-xs font-bold mb-4 inline-block">Featured
+                                Team</span>
+                            <h3 class="text-4xl md:text-6xl font-bold text-white mb-4">NyaStack Dev</h3>
+                            <p
+                                class="text-gray-300 text-lg max-w-xl mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                專注於開發與技術分享的團隊網站。使用最新的 Web 技術棧構建，呈現專業的團隊形象與專案展示。
+                            </p>
+                            <div
+                                class="flex items-center gap-2 text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                                Visit Website <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+                        <!-- Small Projects Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                            <!-- Project 2 -->
+                            <a href="https://github.com/HansHans135/bopomofo" target="_blank">
+                                <div
+                                    class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
+                                    <div class="flex justify-between items-start">
+                                        <div class="p-3 bg-gray-800 rounded-xl">
+                                            <i data-lucide="type" class="w-6 h-6 text-white"></i>
+                                        </div>
+                                        <i data-lucide="arrow-up-right"
+                                            class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold mb-2">注音輸入法</h3>
+                                        <p class="text-gray-400 text-sm">
+                                            A bot helping Taiwanese people forget to switch input methods when chatting.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Project 3 -->
+                            <a href="https://github.com/HansHans135/shin-her" target="_blank">
+                                <div
+                                    class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
+                                    <div class="flex justify-between items-start">
+                                        <div class="p-3 bg-gray-800 rounded-xl">
+                                            <i data-lucide="database" class="w-6 h-6 text-white"></i>
+                                        </div>
+                                        <i data-lucide="arrow-up-right"
+                                            class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold mb-2">Shin Her</h3>
+                                        <p class="text-gray-400 text-sm">
+                                            A web scraper that fetches school grade data and presents it with a beautiful interface.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Project 4 -->
+                            <a href="https://github.com/HansHans135/BoardMate" target="_blank">
+                                <div
+                                    class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
+                                    <div class="flex justify-between items-start">
+                                        <div class="p-3 bg-gray-800 rounded-xl">
+                                            <i data-lucide="layout-dashboard" class="w-6 h-6 text-white"></i>
+                                        </div>
+                                        <i data-lucide="arrow-up-right"
+                                            class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold mb-2">BoardMate</h3>
+                                        <p class="text-gray-400 text-sm">
+                                            A Pterodactyl client panel for server management.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Project 5 -->
+                            <a href="https://discordservers.tw/bots/931507492838576208" target="_blank">
+                                <div
+                                    class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
+                                    <div class="flex justify-between items-start">
+                                        <div class="p-3 bg-gray-800 rounded-xl">
+                                            <i data-lucide="bot" class="w-6 h-6 text-white"></i>
+                                        </div>
+                                        <i data-lucide="arrow-up-right"
+                                            class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold mb-2">Hbot</h3>
+                                        <p class="text-gray-400 text-sm">
+                                            Multi-functional robot dedicated to 0-command experience.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact"
+        class="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 relative bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-4xl mx-auto z-10">
+            <h2 class="text-5xl md:text-8xl font-bold mb-8 tracking-tighter reveal-footer-text">Let's work <br />
+                together.</h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto reveal-footer-text delay-100">
+                有有趣的專案想法？或者只是想聊聊技術？<br>
+                歡迎隨時聯繫我或我的團隊。
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center reveal-footer-text delay-200">
+                <a href="mailto:hi@hans0805.me"
+                    class="px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300">
+                    Email Me
+                </a>
+                <a href="https://nyastack.dev" target="_blank"
+                    class="px-8 py-4 glass-panel rounded-full font-bold text-lg hover:bg-white/10 transition-colors flex items-center gap-2">
+                    Contact Team <i data-lucide="users" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="mt-24 flex gap-8 justify-center">
+                <a href="https://github.com/HansHans135"
+                    class="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
+                    <i data-lucide="github" class="w-8 h-8"></i>
+                </a>
+                <a href="http://t.me/hans0805"
+                    class="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
+                    <i data-lucide="send" class="w-8 h-8"></i>
+                </a>
+                <a href="https://www.instagram.com/08.hans_"
+                    class="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
+                    <i data-lucide="instagram" class="w-8 h-8"></i>
+                </a>
+            </div>
+        </div>
+
+        <p class="absolute bottom-8 text-xs text-gray-600">
+            © 2025 Hans. Built with ❤️ & ☕️.
+        </p>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
 
     <script>
-        let home_page = document.querySelector("#page-home")
-        let info_page = document.querySelector("#page-info")
-        let project_page = document.querySelector("#project-info")
-        function go_page(page_name) {
-            home_page.style.display = "none"
-            info_page.style.display = "none"
-            project_page.style.display = "none"
-            if (page_name == "project") {
-                project_page.style.display = "block"
-                location.hash = "#project"
-            } else if (page_name == "info") {
-                info_page.style.display = "block"
-                location.hash = "#info"
-            } else {
-                home_page.style.display = "block"
-                location.hash = ""
-            }
+        // Initialize Icons
+        lucide.createIcons();
+
+        // 1. Initialize Lenis (Smooth Scroll)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
         }
-        function link_go() {
-            if (location.hash != "") {
-                console.log(`跳轉到 ${location.hash}`)
-                go_page(location.hash.replace("#", ""))
-            }
-        }
-        link_go()
+        requestAnimationFrame(raf);
 
-        let is_show = false
-        function show_name(t) {
-            let info_text = document.querySelector("#info-text")
-            if (is_show) {
-                is_show = false
-                t.textContent = "Hans (亨)"
-                info_text.textContent = info_text.textContent.replace("洪碩亨", "亨")
-            }
-            else {
-                is_show = true
-                t.textContent = "Hans (洪碩亨)"
-                info_text.textContent = info_text.textContent.replace("亨", "洪碩亨")
-            }
+        // Sync GSAP with Lenis
+        gsap.registerPlugin(ScrollTrigger);
 
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            const carousel = document.querySelector('.carousel-inner');
-            const items = document.querySelectorAll('.carousel-item');
-            const prevButton = document.querySelector('.carousel-control.prev');
-            const nextButton = document.querySelector('.carousel-control.next');
-            const indicatorsContainer = document.querySelector('.carousel-indicators');
-            let currentIndex = 0;
+        // 2. Animations
 
-            items.forEach((_, index) => {
-                const indicator = document.createElement('div');
-                indicator.classList.add('indicator');
-                if (index === 0) indicator.classList.add('active');
-                indicator.addEventListener('click', () => showItem(index));
-                indicatorsContainer.appendChild(indicator);
-            });
+        // Hero Section Loading Animation
+        const tl = gsap.timeline();
 
-            const indicators = document.querySelectorAll('.indicator');
+        tl.from(".hero-reveal", {
+            y: 100,
+            opacity: 0,
+            duration: 1.5,
+            stagger: 0.2,
+            ease: "power4.out",
+            delay: 0.2
+        });
 
-            function showItem(index) {
-                carousel.style.transform = `translateX(-${index * 100}%)`;
-                indicators[currentIndex].classList.remove('active');
-                indicators[index].classList.add('active');
-                currentIndex = index;
-            }
-
-            function goToPrev(e) {
-                e.preventDefault();
-                let index = currentIndex - 1;
-                if (index < 0) index = items.length - 1;
-                showItem(index);
-            }
-
-            function goToNext(e) {
-                e.preventDefault();
-                let index = currentIndex + 1;
-                if (index >= items.length) index = 0;
-                showItem(index);
-            }
-
-            prevButton.addEventListener('click', goToPrev);
-            nextButton.addEventListener('click', goToNext);
-
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            carousel.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-
-            carousel.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                if (touchStartX - touchEndX > 50) {
-                    goToNext(e);
-                } else if (touchEndX - touchStartX > 50) {
-                    goToPrev(e);
-                }
+        // About Section Reveal
+        gsap.utils.toArray('.gs-reveal').forEach((elem) => {
+            gsap.from(elem, {
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
             });
         });
-    </script>
 
+        // Community Cards Stacking Effect
+        const cards = gsap.utils.toArray(".community-card");
+
+        cards.forEach((card, index) => {
+            // Initial fade in
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+
+            // Scale down effect
+            if (index < cards.length - 1) {
+                const nextCard = cards[index + 1];
+                gsap.to(card, {
+                    scale: 0.9,
+                    opacity: 0.5,
+                    filter: "blur(5px)",
+                    scrollTrigger: {
+                        trigger: nextCard,
+                        start: "top 80%", // When next card enters
+                        end: "top 20%",   // When next card is near top
+                        scrub: true,
+                    }
+                });
+            }
+        });
+
+        // Work Section Parallaxish Effect
+        gsap.from(".project-card", {
+            scrollTrigger: {
+                trigger: ".project-card",
+                start: "top 90%",
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 1.2,
+            ease: "expo.out"
+        });
+
+        gsap.utils.toArray('.project-card-small').forEach((elem, i) => {
+            gsap.from(elem, {
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 90%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: i * 0.1,
+                ease: "power3.out"
+            });
+        });
+
+        // Footer Reveal
+        gsap.from(".reveal-footer-text", {
+            scrollTrigger: {
+                trigger: "#contact",
+                start: "top 70%",
+            },
+            y: 60,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+
+        // Header Line Reveal
+        gsap.utils.toArray('.reveal-line').forEach((line) => {
+            gsap.from(line, {
+                scrollTrigger: {
+                    trigger: line,
+                    start: "top 85%",
+                },
+                scaleX: 0,
+                duration: 1.5,
+                ease: "power3.inOut"
+            });
+        });
+
+        // Smooth Anchor Links (fixing conflict with Lenis)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                lenis.scrollTo(this.getAttribute('href'));
+            });
+        });
+
+        // 3. Interactive Effects
+
+        // Spotlight Effect
+        document.querySelectorAll('.glass-panel').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // 3D Tilt Effect for Project Card
+        const projectCard = document.querySelector('.project-card');
+        if (projectCard) {
+            projectCard.addEventListener('mousemove', (e) => {
+                const rect = projectCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -5; // Max rotation deg
+                const rotateY = ((x - centerX) / centerX) * 5;
+
+                gsap.to(projectCard, {
+                    duration: 0.5,
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    transformPerspective: 1000,
+                    ease: "power1.out"
+                });
+            });
+
+            projectCard.addEventListener('mouseleave', () => {
+                gsap.to(projectCard, {
+                    duration: 0.5,
+                    rotateX: 0,
+                    rotateY: 0,
+                    ease: "power1.out"
+                });
+            });
+        }
+
+        // Magnetic Button Effect
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                gsap.to(btn, {
+                    duration: 0.3,
+                    x: x * 0.3,
+                    y: y * 0.3,
+                    ease: "power2.out"
+                });
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, {
+                    duration: 0.8,
+                    x: 0,
+                    y: 0,
+                    ease: "elastic.out(1, 0.3)"
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>

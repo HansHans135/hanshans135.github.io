@@ -10,15 +10,17 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Hans - Backend Developer & Digital Architect. 專注於打造高效能、高可用的後端系統架構與 Web 開發。">
-    <meta name="keywords" content="Hans, Backend Developer, Python, C#, Web Development, Discord Bot, System Architecture, Portfolio, 軟體工程師, 後端開發">
+    <meta name="keywords"
+        content="Hans, Backend Developer, Python, C#, Web Development, Discord Bot, System Architecture, Portfolio, 軟體工程師, 後端開發">
     <meta name="author" content="Hans">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hans0805.me/">
     <meta property="og:title" content="Hans | Backend Developer">
-    <meta property="og:description" content="Hans - Backend Developer & Digital Architect. 專注於打造高效能、高可用的後端系統架構與 Web 開發。">
+    <meta property="og:description"
+        content="Hans - Backend Developer & Digital Architect. 專注於打造高效能、高可用的後端系統架構與 Web 開發。">
     <meta property="og:image" content="https://github.com/HansHans135.png">
     <meta property="og:locale" content="zh_TW">
 
@@ -26,7 +28,8 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hans0805.me/">
     <meta property="twitter:title" content="Hans | Backend Developer">
-    <meta property="twitter:description" content="Hans - Backend Developer & Digital Architect. 專注於打造高效能、高可用的後端系統架構與 Web 開發。">
+    <meta property="twitter:description"
+        content="Hans - Backend Developer & Digital Architect. 專注於打造高效能、高可用的後端系統架構與 Web 開發。">
     <meta property="twitter:image" content="https://github.com/HansHans135.png">
 
     <link rel="canonical" href="https://hans0805.me/">
@@ -136,6 +139,7 @@
         .text-gradient {
             background: linear-gradient(to right, #fff, #86868b);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -165,6 +169,7 @@
                 <a href="#about" class="hover:text-white transition-colors">關於我</a>
                 <a href="#journey" class="hover:text-white transition-colors">歷程</a>
                 <a href="#work" class="hover:text-white transition-colors">作品集</a>
+                <a href="projects.html" class="hover:text-white transition-colors">服務與專案</a>
                 <a href="#contact" class="hover:text-white transition-colors">聯絡</a>
             </div>
             <a href="#contact"
@@ -554,7 +559,7 @@
                         <ul class="space-y-3 text-gray-300">
                             <li class="flex items-center gap-3">
                                 <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-                                <span>2025 / Player (Software Development)</span>
+                                <span>2025 / 12th Place (Software Development)</span>
                             </li>
                         </ul>
                     </div>
@@ -572,10 +577,16 @@
                     <p class="text-gray-500">Quality over quantity.</p>
                 </div>
 
-                <a href="https://github.com/HansHans135"
-                    class="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors mt-4 md:mt-0">
-                    View all repositories <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="projects.html"
+                        class="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors mt-4 md:mt-0">
+                        View All Projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://github.com/HansHans135" target="_blank"
+                        class="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors">
+                        GitHub <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Project Card: NyaStack -->
@@ -615,88 +626,89 @@
                 </div>
             </a>
 
-                        <!-- Small Projects Grid -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                            <!-- Project 2 -->
-                            <a href="https://github.com/HansHans135/bopomofo" target="_blank">
-                                <div
-                                    class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
-                                    <div class="flex justify-between items-start">
-                                        <div class="p-3 bg-gray-800 rounded-xl">
-                                            <i data-lucide="type" class="w-6 h-6 text-white"></i>
-                                        </div>
-                                        <i data-lucide="arrow-up-right"
-                                            class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-2xl font-bold mb-2">注音輸入法</h3>
-                                        <p class="text-gray-400 text-sm">
-                                            A bot helping Taiwanese people forget to switch input methods when chatting.
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 3 -->
-                            <a href="https://github.com/HansHans135/shin-her" target="_blank">
-                                <div
-                                    class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
-                                    <div class="flex justify-between items-start">
-                                        <div class="p-3 bg-gray-800 rounded-xl">
-                                            <i data-lucide="database" class="w-6 h-6 text-white"></i>
-                                        </div>
-                                        <i data-lucide="arrow-up-right"
-                                            class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-2xl font-bold mb-2">Shin Her</h3>
-                                        <p class="text-gray-400 text-sm">
-                                            A web scraper that fetches school grade data and presents it with a beautiful interface.
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 4 -->
-                            <a href="https://github.com/HansHans135/BoardMate" target="_blank">
-                                <div
-                                    class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
-                                    <div class="flex justify-between items-start">
-                                        <div class="p-3 bg-gray-800 rounded-xl">
-                                            <i data-lucide="layout-dashboard" class="w-6 h-6 text-white"></i>
-                                        </div>
-                                        <i data-lucide="arrow-up-right"
-                                            class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-2xl font-bold mb-2">BoardMate</h3>
-                                        <p class="text-gray-400 text-sm">
-                                            A Pterodactyl client panel for server management.
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 5 -->
-                            <a href="https://discordservers.tw/bots/931507492838576208" target="_blank">
-                                <div
-                                    class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
-                                    <div class="flex justify-between items-start">
-                                        <div class="p-3 bg-gray-800 rounded-xl">
-                                            <i data-lucide="bot" class="w-6 h-6 text-white"></i>
-                                        </div>
-                                        <i data-lucide="arrow-up-right"
-                                            class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-2xl font-bold mb-2">Hbot</h3>
-                                        <p class="text-gray-400 text-sm">
-                                            Multi-functional robot dedicated to 0-command experience.
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
+            <!-- Small Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <!-- Project 2 -->
+                <a href="https://github.com/HansHans135/bopomofo" target="_blank">
+                    <div
+                        class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
+                        <div class="flex justify-between items-start">
+                            <div class="p-3 bg-gray-800 rounded-xl">
+                                <i data-lucide="type" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <i data-lucide="arrow-up-right"
+                                class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
                         </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">注音輸入法</h3>
+                            <p class="text-gray-400 text-sm">
+                                A bot helping Taiwanese people forget to switch input methods when chatting.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="https://github.com/HansHans135/shin-her" target="_blank">
+                    <div
+                        class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
+                        <div class="flex justify-between items-start">
+                            <div class="p-3 bg-gray-800 rounded-xl">
+                                <i data-lucide="database" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <i data-lucide="arrow-up-right"
+                                class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Shin Her</h3>
+                            <p class="text-gray-400 text-sm">
+                                A web scraper that fetches school grade data and presents it with a beautiful
+                                interface.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 4 -->
+                <a href="https://github.com/HansHans135/BoardMate" target="_blank">
+                    <div
+                        class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
+                        <div class="flex justify-between items-start">
+                            <div class="p-3 bg-gray-800 rounded-xl">
+                                <i data-lucide="layout-dashboard" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <i data-lucide="arrow-up-right"
+                                class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">BoardMate</h3>
+                            <p class="text-gray-400 text-sm">
+                                A Pterodactyl client panel for server management.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 5 -->
+                <a href="https://discordservers.tw/bots/931507492838576208" target="_blank">
+                    <div
+                        class="glass-panel p-8 rounded-3xl hover:bg-gray-900 transition-all duration-300 group project-card-small h-64 flex flex-col justify-between">
+                        <div class="flex justify-between items-start">
+                            <div class="p-3 bg-gray-800 rounded-xl">
+                                <i data-lucide="bot" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <i data-lucide="arrow-up-right"
+                                class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Hbot</h3>
+                            <p class="text-gray-400 text-sm">
+                                Multi-functional robot dedicated to 0-command experience.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
